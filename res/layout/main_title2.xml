@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/bg_title1" android:layout_width="fill_parent" android:layout_height="@dimen/height_main_title2"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/radG_mainTitle" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RadioButton android:id="@id/radG_item1" android:checked="true" android:button="@null" android:text="@string/sleep" style="\@style/radB_title" />
+        <RadioButton android:id="@id/radG_item2" android:button="@null" android:text="@string/list" style="\@style/radB_title" />
+        <RadioButton android:id="@id/radG_item3" android:button="@null" android:text="@string/trend" style="\@style/radB_title" />
+        <RadioButton android:id="@id/radG_item4" android:button="@null" android:text="@string/Help" style="\@style/radB_title" />
+    </RadioGroup>
+</LinearLayout>

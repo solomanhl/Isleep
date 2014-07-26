@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingBottom="15.0dip"
+    android:paddingLeft="8.0dip"
+    android:paddingRight="8.0dip"
+    android:paddingTop="15.0dip" >
+
+    <ExpandableListView
+        android:id="@id/expandL_sleep_more"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@color/touming"
+        android:childDivider="@color/white"
+        android:divider="@drawable/line"
+        android:dividerHeight="1.0dip"
+        android:groupIndicator="@null"
+        android:listSelector="@drawable/expand_sel"
+        android:overScrollMode="always"
+        android:scrollbars="none" />
+
+</LinearLayout>

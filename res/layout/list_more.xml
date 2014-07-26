@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="20.0dip" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="@color/black" android:id="@id/tv_popur_title" android:text="55" style="\@style/tv_sleep_content" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+        <TextView android:textColor="@color/grey" android:id="@id/tv_popur_content" android:text="66" android:layout_weight="1.0" android:lineSpacingExtra="5.0dip" style="\@style/tv_sleep_content" />
+        <ImageView android:layout_gravity="right" android:id="@id/imgV_popur_index" android:paddingLeft="10.0dip" android:paddingTop="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/dialog_more_down" android:layout_weight="0.0" />
+    </LinearLayout>
+</LinearLayout>

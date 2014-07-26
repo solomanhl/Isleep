@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="more_title">
+        <item>best length</item>
+        <item>sleep time warp</item>
+        <item>sleep reminder</item>
+        <item>switch Language</item>
+        <item>appearance</item>
+        <item>backup and restore</item>
+        <item>version info</item>
+    </string-array>
+    <string-array name="more_content">
+        <item>The best sleep allows you to wake up the most comfortable time</item>
+        <item>Allows you to record sleep better</item>
+    </string-array>
+    <string-array name="help_group">
+        <item>Can’t sleep,please help me</item>
+        <item>Sleep knowledge</item>
+    </string-array>
+    <string-array name="help_child1">
+        <item>1.Food can help the baby fall asleep</item>
+        <item>2.Small tips for sleep, help your baby fall asleep quickly</item>
+        <item>3. Bedroom Checklist</item>
+    </string-array>
+    <string-array name="help_child2">
+        <item>1. Baby’s sleep time</item>
+        <item>2. Precautions to soothe your baby to sleep</item>
+        <item>3. What kind of sleeping posture does good to baby</item>
+        <item>4. How to develop your baby’s sleeping habits</item>
+        <item>5. Large bed or baby cot does good to baby’s sleep</item>
+        <item>6. What kind of pillow is suit to baby</item>
+    </string-array>
+    <string-array name="setting">
+        <item>time</item>
+        <item>repeat</item>
+        <item>ring</item>
+        <item>shake</item>
+    </string-array>
+    <string-array name="dayOfWeek">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+    <string-array name="dayAssic">
+        <item>7</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="listTop_grid">
+        <item>date</item>
+        <item>sleep</item>
+        <item>wake</item>
+        <item>duration</item>
+        <item>debt</item>
+    </string-array>
+</resources>

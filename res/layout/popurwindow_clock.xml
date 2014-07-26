@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/touming" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:background="@drawable/popur_clock" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ListView android:id="@id/list_popurwindow_clock" style="\@style/list_style" />
+    </LinearLayout>
+</LinearLayout>

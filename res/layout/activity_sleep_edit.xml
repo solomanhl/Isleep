@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/size_tv_sleep_title" android:textColor="@color/white" android:gravity="center" android:background="@color/grey" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/sleep_record_edit" />
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:gravity="left" android:layout_width="0.0dip" android:text="@string/duration" android:layout_weight="1.0" style="\@style/tv_sleep_content" />
+                <TextView android:layout_gravity="right" android:id="@id/tv_duration" android:text="24小时" android:layout_weight="0.0" style="\@style/tv_sleep_content" />
+            </LinearLayout>
+            <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0dip" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="30.0dip">
+                <TextView android:text="@string/sleep_time" android:layout_weight="0.0" style="\@style/tv_sleep_content" />
+
+                <Button
+                    android:id="@id/btn_sleepstart_date"
+                    style="\@style/btn_list_start"
+                    android:layout_marginLeft="0.0dip"
+                    android:layout_weight="0.0"
+                    android:text="10:00a.m" />
+
+                <Button android:id="@id/btn_sleepstart_time" android:layout_marginLeft="20.0dip" android:text="13/12/08" android:layout_weight="0.0" style="\@style/btn_list_start" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="20.0dip">
+                <TextView android:text="@string/wake_time" android:layout_weight="0.0" style="\@style/tv_sleep_content" />
+                <Button android:id="@id/btn_wakestart_date" android:layout_marginLeft="0.0dip" android:text="10:00a.m" android:layout_weight="0.0" style="\@style/btn_list_start" />
+                <Button android:id="@id/btn_wakestart_time" android:layout_marginLeft="20.0dip" android:text="13/12/08" android:layout_weight="0.0" style="\@style/btn_list_start" />
+            </LinearLayout>
+            <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="8.0dip" />
+            <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/lin_sleep_xin" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <TextView android:id="@id/tv_sleep_remark" android:text="@string/sleep_remark" android:layout_weight="0.0" style="\@style/tv_sleep_content" />
+                <EditText android:id="@id/edt_sleep_remark" android:background="@drawable/bg_edt_remark" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:maxLines="8" android:layout_weight="0.0" />
+            </LinearLayout>
+            <Button android:layout_gravity="center_horizontal" android:id="@id/btn_recordPlay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/play_sound" />
+            <cn.figo.isleep.customView.SoundPlayCanvas android:id="@id/soundPlayCanvas" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_marginTop="20.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:background="@color/blue" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0">
+        <TextView android:gravity="center" android:id="@id/tv_cansel" android:padding="8.0dip" android:clickable="true" android:text="@string/cansel" android:drawableLeft="@drawable/cansel" android:drawablePadding="8.0dip" style="\@style/tv_sleep_content" />
+        <View android:background="@color/white" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <TextView android:gravity="center" android:id="@id/tv_delete" android:padding="8.0dip" android:clickable="true" android:text="@string/delete" android:drawableLeft="@drawable/delete" android:drawablePadding="8.0dip" style="\@style/tv_sleep_content" />
+        <View android:background="@color/white" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <TextView android:gravity="center" android:id="@id/tv_save" android:padding="8.0dip" android:clickable="true" android:text="@string/save" android:drawableLeft="@drawable/save" android:drawablePadding="8.0dip" style="\@style/tv_sleep_content" />
+    </LinearLayout>
+</LinearLayout>

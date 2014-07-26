@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="20.0dip"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:paddingTop="20.0dip" >
+
+        <TextView
+            android:id="@id/tv_fragmentlist_start"
+            style="@style/tv_list_start"
+            android:text="@string/from" />
+
+        <Button
+            android:id="@id/btn_fragmentlist_start"
+            style="@style/btn_list_start"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/tv_fragmentlist_start"
+            android:text="13/12/08" />
+
+        <TextView
+            android:id="@id/tv_fragmentlist_end"
+            style="@style/tv_list_start"
+            android:layout_marginLeft="15.0dip"
+            android:layout_toRightOf="@id/btn_fragmentlist_start"
+            android:text="@string/to" />
+
+        <Button
+            android:id="@id/btn_fragmentlist_end"
+            style="@style/btn_list_start"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/tv_fragmentlist_end"
+            android:text="13/12/08" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="@color/deepblue"
+        android:orientation="vertical"
+        android:paddingLeft="5.0dip"
+        android:paddingRight="5.0dip" >
+
+        <include layout="@layout/sleeplist_top" />
+
+        <ListView
+            android:id="@id/list_list"
+            style="@style/list_style" />
+
+        <TextView
+            android:id="@id/tv_list_hour"
+            style="@style/tv_sleep_content"
+            android:layout_width="fill_parent"
+            android:gravity="right"
+            android:padding="20.0dip"
+            android:text="@string/hour"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <include layout="@layout/sleeplist_bottom" />
+
+</LinearLayout>

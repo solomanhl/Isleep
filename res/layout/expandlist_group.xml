@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/lin_expandGroup"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="20.0dip"
+    android:paddingRight="20.0dip" >
+
+    <ImageView
+        android:id="@id/imgV_expand_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@id/tv_expand_title"
+        style="@style/tv_help_groupTitle"
+        android:layout_marginLeft="10.0dip" />
+
+</LinearLayout>

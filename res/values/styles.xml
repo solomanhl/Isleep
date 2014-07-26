@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <style name="AppBaseTheme" parent="@android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme" parent="@style/AppBaseTheme" />
+
+    <style name="popurstyle" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/head_in_right</item>
+        <item name="android:windowExitAnimation">@anim/head_out_right</item>
+    </style>
+
+    <style name="PopupAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/popwindow_in</item>
+        <item name="android:windowExitAnimation">@anim/popwindow_out</item>
+    </style>
+
+    <style name="dialogstyle" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/head_in_left</item>
+        <item name="android:windowExitAnimation">@anim/head_out_left</item>
+    </style>
+
+    <style name="defaultDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:backgroundDimAmount">0.0</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="radB_title">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textColor">@color/rad_text_sel</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/touming</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="tv_sleep_timelong">
+        <item name="android:textSize">@dimen/size_tv_sleep_left</item>
+        <item name="android:textColor">@color/text_body_sel</item>
+        <item name="android:gravity">top</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="tv_sleep_content" parent="@style/tv_sleep_timelong">
+        <item name="android:textSize">@dimen/size_tv_sleep_content</item>
+    </style>
+
+    <style name="tv_sleep_title" parent="@style/tv_sleep_timelong">
+        <item name="android:textSize">@dimen/size_tv_sleep_title</item>
+    </style>
+
+    <style name="tv_help_groupTitle" parent="@style/tv_sleep_timelong">
+        <item name="android:textSize">@dimen/size_tv_sleep_content</item>
+    </style>
+
+    <style name="tv_help_childTitle" parent="@style/tv_sleep_timelong">
+        <item name="android:textSize">@dimen/size_tv_sleep_content</item>
+    </style>
+
+    <style name="tv_list_start" parent="@style/tv_sleep_timelong">
+        <item name="android:textSize">@dimen/size_tv_sleep_content</item>
+    </style>
+
+    <style name="tv_grid" parent="@style/tv_sleep_timelong">
+        <item name="android:textSize">@dimen/size_tv_grid</item>
+    </style>
+
+    <style name="tv_sleeplist" parent="@style/tv_sleep_timelong">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="btn_list_start">
+        <item name="android:textSize">@dimen/size_btn</item>
+        <item name="android:textColor">@color/text_body_sel</item>
+        <item name="android:background">@drawable/btn_edt_bg</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">25.0dip</item>
+    </style>
+
+    <style name="list_style">
+        <item name="android:scrollbars">none</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:cacheColorHint">@color/touming</item>
+        <item name="android:divider">@drawable/dialog_more_driver</item>
+
+    </style>
+
+</resources>

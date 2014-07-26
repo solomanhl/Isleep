@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/size_tv_sleep_title" android:textColor="@color/white" android:gravity="center" android:background="@color/grey" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/setting" />
+    <ListView android:id="@id/list_clockSetting" android:divider="@color/white" android:dividerHeight="1.0dip" android:layout_weight="1.0" style="\@style/list_style" />
+    <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0">
+        <Button android:textSize="18.0sp" android:textColor="@color/black" android:id="@id/btn_commit" android:background="@drawable/btn_delete_sel" android:layout_width="wrap_content" android:layout_height="45.0dip" android:layout_marginRight="4.0dip" android:text="@string/comfirm" android:layout_weight="1.0" />
+        <Button android:textSize="18.0sp" android:textColor="@color/black" android:id="@id/btn_cansel" android:background="@drawable/btn_delete_sel" android:layout_width="wrap_content" android:layout_height="45.0dip" android:layout_marginLeft="4.0dip" android:text="@string/cansel" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0">
+        <Button android:textSize="18.0sp" android:textColor="@color/black" android:id="@id/btn_delete" android:background="@drawable/btn_delete_sel" android:layout_width="fill_parent" android:layout_height="45.0dip" android:text="@string/delete" />
+    </LinearLayout>
+</LinearLayout>

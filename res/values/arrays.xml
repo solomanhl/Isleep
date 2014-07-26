@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="more_title">
+        <item>最佳长度</item>
+        <item>睡觉时间偏差</item>
+        <item>睡觉提醒</item>
+        <item>语言切换</item>
+        <item>外观</item>
+        <item>备份与还原</item>
+        <item>版本信息</item>
+    </string-array>
+    <string-array name="more_content">
+        <item>最佳的睡觉时长可以让你 醒来后最舒服的时长</item>
+        <item>可以让你更好地记录睡眠时间</item>
+    </string-array>
+    <string-array name="help_group">
+        <item>睡不着，帮帮我</item>
+        <item>了解睡眠知识</item>
+    </string-array>
+    <string-array name="help_child1">
+        <item>1、帮助宝宝睡眠的食物</item>
+        <item>2、睡眠小妙招，帮助宝宝快速入睡</item>
+        <item>3、睡房检查清单</item>
+    </string-array>
+    <string-array name="help_child2">
+        <item>1、宝宝睡眠时间</item>
+        <item>2、安抚宝宝睡眠注意事项</item>
+        <item>3、宝宝什么睡姿好</item>
+        <item>4、如何培养宝宝的睡眠习惯</item>
+        <item>5、宝宝睡大床还是小床好</item>
+        <item>6、宝宝适合什么样的枕头</item>
+    </string-array>
+    <string-array name="setting">
+        <item>时间</item>
+        <item>重复</item>
+        <item>铃声</item>
+        <item>震动</item>
+    </string-array>
+    <string-array name="dayOfWeek">
+        <item>星期日</item>
+        <item>星期一</item>
+        <item>星期二</item>
+        <item>星期三</item>
+        <item>星期四</item>
+        <item>星期五</item>
+        <item>星期六</item>
+    </string-array>
+    <string-array name="dayAssic">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array>
+    <string-array name="listTop_grid">
+        <item>日期</item>
+        <item>睡时</item>
+        <item>醒时</item>
+        <item>时长</item>
+        <item>睡债</item>
+    </string-array>
+</resources>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@id/radG_canvas"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@id/radB_trend"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/radb_trend_sel"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:padding="6.0dip"
+            android:text="@string/sleep"
+            android:textColor="@color/bg"
+            android:textSize="18.0sp" />
+
+        <RadioButton
+            android:id="@id/radB_noise"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/radb_trend_sel"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="6.0dip"
+            android:text="@string/db"
+            android:textColor="@color/bg"
+            android:textSize="18.0sp" />
+    </RadioGroup>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="5.0dip"
+            android:orientation="vertical"
+            android:padding="10.0dip" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="200.0dip" >
+<!-- 
+                <cn.figo.isleep.customView.TrendCanvas
+                    android:id="@id/trendCanvas"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200.0dip" />
+
+                <cn.figo.isleep.customView.NoiseCanvas
+                    android:id="@id/noiseCanvas"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200.0dip"
+                    android:visibility="invisible" />
+-->
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20.0dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/tv_sleep_content"
+                    android:layout_weight="1.0"
+                    android:gravity="left"
+                    android:text="@string/sleep_debt" />
+
+                <TextView
+                    android:id="@id/tv_sleepDebt"
+                    style="@style/tv_sleep_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="0.0"
+                    android:text="55555" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginTop="5.0dip"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20.0dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/tv_sleep_content"
+                    android:layout_weight="1.0"
+                    android:gravity="left"
+                    android:text="@string/everyday_avarge_time" />
+
+                <TextView
+                    android:id="@id/tv_avargeSleepTime"
+                    style="@style/tv_sleep_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="0.0"
+                    android:text="55555" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginTop="5.0dip"
+                android:background="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

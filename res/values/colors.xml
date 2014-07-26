@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="touming">#00000000</color>
+    <color name="bg">#ff121625</color>
+    <color name="bg_half">#ff000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="grey">#ff808080</color>
+    <color name="grey_checkB">#ffa6a6a6</color>
+    <color name="blue">#ff0d497b</color>
+    <color name="deepblue">#ff242c47</color>
+    <color name="help_listbg">#ff202843</color>
+</resources>

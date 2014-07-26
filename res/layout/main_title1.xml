@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/height_main_title1"
+    android:background="@color/bg" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15.0dip"
+        android:src="@drawable/title_logo" />
+
+    <ImageButton
+        android:id="@id/btn_title_more"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="9.0dip"
+        android:background="@color/tilte_btn_sel"
+        android:paddingLeft="19.0dip"
+        android:paddingRight="19.0dip"
+        android:src="@drawable/title_more" />
+
+    <ImageButton
+        android:id="@id/btn_title_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/btn_title_more"
+        android:background="@color/tilte_btn_sel"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="14.0dip"
+        android:src="@drawable/title_clock" />
+
+    <ImageButton
+        android:id="@id/btn_title_noise"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/btn_title_clock"
+        android:background="@color/tilte_btn_sel"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="14.0dip"
+        android:src="@drawable/icon_alarm" />
+
+</RelativeLayout>

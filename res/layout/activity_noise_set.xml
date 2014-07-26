@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:gravity="center"
+        android:paddingBottom="10.0dip"
+        android:paddingTop="10.0dip"
+        android:text="@string/sound_set"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_tv_sleep_title" />
+
+    <LinearLayout
+        android:id="@id/lin_tel"
+        android:layout_width="fill_parent"
+        android:layout_height="70.0dip"
+        android:background="#ff597eaa"
+        android:paddingBottom="15.0dip"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:paddingTop="15.0dip" >
+
+        <TextView
+            style="\@style/tv_sleep_content"
+            android:layout_gravity="right|center"
+            android:text="@string/tel_number" />
+
+        <TextView
+            android:id="@id/tv_tel"
+            style="\@style/tv_sleep_content"
+            android:layout_gravity="right|center"
+            android:paddingRight="10.0dip"
+            android:text="12345678988" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_weight="0.0"
+            android:src="@drawable/index_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/lin_set"
+        android:layout_width="fill_parent"
+        android:layout_height="70.0dip"
+        android:layout_marginTop="20.0dip"
+        android:background="#ff597eaa"
+        android:gravity="center_vertical"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip" >
+
+        <TextView
+            android:id="@id/tv_noiseValue"
+            style="\@style/tv_sleep_content"
+            android:layout_gravity="right|center"
+            android:text="@string/environmental_noise" />
+
+        <cn.figo.isleep.customView.MySlideButton
+            android:id="@id/switch_noise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/lin_noiseDurationTime"
+        android:layout_width="fill_parent"
+        android:layout_height="70.0dip"
+        android:layout_marginTop="20.0dip"
+        android:background="#ff597eaa"
+        android:gravity="center_vertical"
+        android:paddingBottom="15.0dip"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:paddingTop="15.0dip" >
+
+        <TextView
+            android:id="@id/tv_breatheValue"
+            style="\@style/tv_sleep_content"
+            android:layout_gravity="right|center"
+            android:text="@string/breathe_noise" />
+
+        <cn.figo.isleep.customView.MySlideButton
+            android:id="@id/switch_breatheNoise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/lin_analogy"
+        android:layout_width="fill_parent"
+        android:layout_height="70.0dip"
+        android:layout_marginTop="20.0dip"
+        android:background="#ff597eaa"
+        android:gravity="center_vertical"
+        android:paddingBottom="15.0dip"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:paddingTop="15.0dip" >
+
+        <TextView
+            style="\@style/tv_sleep_content"
+            android:layout_gravity="right|center"
+            android:text="@string/about_noise_analogy" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_weight="0.0"
+            android:src="@drawable/index_right" />
+    </LinearLayout>
+
+</LinearLayout>
