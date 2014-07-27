@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:text="24:50"
+                android:text="00:00"
                 android:textSize="76.0sp" />
 <!-- 
             <cn.figo.isleep.customView.MySlideButton

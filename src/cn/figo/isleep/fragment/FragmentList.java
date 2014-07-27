@@ -1,5 +1,6 @@
 package cn.figo.isleep.fragment;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -9,6 +10,7 @@ import java.util.Locale;
 import cn.figo.isleep.GlobalVar;
 import cn.figo.isleep.R;
 import android.app.DatePickerDialog;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -29,7 +31,6 @@ public class FragmentList extends Fragment{
 	public GridView grid_listTop;
 	
 	private static final int DATA_PICKER_ID = 1;
-	public DatePicker mDatePicker;
 	private int year;
     private int month;
     private int day;
@@ -52,10 +53,23 @@ public class FragmentList extends Fragment{
 		findView(view);
 		updateGridView();
 		
+		searchList(new Date(0,6,26), appState.getCurTime());	//0是1900年
+		
         return view;
 	}
 
-
+	@Override
+	public void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		stopPlayRec();
+	}
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		stopPlayRec();
+	}
 
 	public void findView(View view){
 		btn_fragmentlist_start = (Button) view.findViewById(R.id.btn_fragmentlist_start);
@@ -210,7 +224,61 @@ public class FragmentList extends Fragment{
 			HashMap<String, Object> item = (HashMap<String, Object>) arg0.getItemAtPosition(arg2);
 			// 显示所选Item的ItemText
 			String s = (String) item.get("ItemText");
+			//播放声音回放
+			s = "figo.amr";
+			playRec(s);
 		}
 
+	}
+
+	public MediaPlayer mPlayer;
+	public void playRec(String recfile) {
+		// TODO Auto-generated method stub		
+		
+		try {
+			stopPlayRec();	//先停止上一次的
+			
+			mPlayer = new MediaPlayer();
+			mPlayer.setDataSource(appState.extStorage + appState.appsdPath + appState.recPath + recfile);
+			//mPlayer.setLooping(true);//设置循环播放
+			mPlayer.prepare();
+			mPlayer.start();//播放声音    
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 	} 
+	
+	public void stopPlayRec(){
+		if (mPlayer != null) {
+			mPlayer.stop();
+			mPlayer.reset();
+			mPlayer.release();
+			mPlayer = null;
+		}
+	}
+	
+	public void searchList(Date start, Date end){
+		appState.queryTable(appState.sleepTableName, start, end);
+		//appState.queryTable(appState.sleepTableName);
+		int id = 0;
+		long starttime, endtime;
+		appState.cursor.moveToFirst();
+		while(appState.cursor.getCount() > 0 && !appState.cursor.isAfterLast()){
+			id = appState.cursor.getInt(appState.cursor.getColumnIndex("id") );
+			starttime = appState.cursor.getLong(appState.cursor.getColumnIndex("startTime") );
+			endtime = appState.cursor.getLong(appState.cursor.getColumnIndex("endTime") );
+			
+			appState.cursor.moveToNext();
+		}
+	}
 }

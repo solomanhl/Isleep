@@ -3,7 +3,6 @@ package cn.figo.isleep;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import cn.figo.isleep.fragment.CanvasTrend;
 import cn.figo.isleep.fragment.FragmentHelp;
 import cn.figo.isleep.fragment.FragmentList;
@@ -19,12 +18,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
 
 public class MainActivity extends FragmentActivity {
 
@@ -35,12 +32,13 @@ public class MainActivity extends FragmentActivity {
 	public FragmentHelp fragmentHelp;
 	
 	public GlobalVar appState; // 获得全局变量;; 
-	public MediaRecorder recorder;
-	
-	public ViewPager viewPager;
-	
+	public MediaRecorder recorder;	
+	public ViewPager viewPager;	
 	public Button switch_sleep;	//睡眠按钮
+	public RadioGroup radG_mainTitle;
+	public RadioButton radG_item1, radG_item2, radG_item3, radG_item4;	
 	
+	public String recfile = "figo.amr";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +48,11 @@ public class MainActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
 				
 		appState.getextStorage();//获取外部存储路径 带“/”
+		appState.creatDir(appState.extStorage + appState.appsdPath + appState.recPath);
 		appState.sleeping = false;
 		appState.recTag = false;
+		appState.getDB();
+		
 		findView();
 		initViewPager();
 		
@@ -97,17 +98,50 @@ public class MainActivity extends FragmentActivity {
 		// TODO Auto-generated method stub
 		super.finalize();
 		recStop();
+		if (appState.cursor != null){
+			appState.cursor. close();
+		}
+		
 	}
 	
-	public void onClose() {
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
 		recStop();
+		
+		if (appState.cursor != null){
+			appState.cursor. close();
+		}
 	}
 	
 	public void findView(){
 		viewPager = (ViewPager) findViewById(R.id.viewPager);		
-		switch_sleep = (Button) findViewById(R.id.switch_sleep);		
+		switch_sleep = (Button) findViewById(R.id.switch_sleep);
 		
-
+		radG_mainTitle = (RadioGroup) findViewById(R.id.radG_mainTitle);
+		radG_item1 = (RadioButton) findViewById(R.id.radG_item1);
+		radG_item2 = (RadioButton) findViewById(R.id.radG_item2);
+		radG_item3 = (RadioButton) findViewById(R.id.radG_item3);
+		radG_item4 = (RadioButton) findViewById(R.id.radG_item4);
+		
+		radG_mainTitle.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+					@Override
+					public void onCheckedChanged(RadioGroup group, int checkedId) {
+						// TODO Auto-generated method stub
+						if (checkedId == radG_item1.getId()) {
+							viewPager.setCurrentItem(0);
+						}
+						if (checkedId == radG_item2.getId()) {
+							viewPager.setCurrentItem(1);
+						}
+						if (checkedId == radG_item3.getId()) {
+							viewPager.setCurrentItem(2);
+						}
+						if (checkedId == radG_item4.getId()) {
+							viewPager.setCurrentItem(3);
+						}
+					}
+				});
 	}
 
 	
@@ -150,7 +184,20 @@ public class MainActivity extends FragmentActivity {
 		@Override
 		public void onPageSelected(int arg0) {
 			// TODO Auto-generated method stub
-
+			switch (arg0) {
+			case 0:
+				radG_item1.setChecked(true);
+				break;
+			case 1:
+				radG_item2.setChecked(true);
+				break;
+			case 2:
+				radG_item3.setChecked(true);
+				break;
+			case 3:
+				radG_item4.setChecked(true);
+				break;
+			}
 		}
 		
 		
@@ -178,21 +225,20 @@ public class MainActivity extends FragmentActivity {
 		}			
 	} 
 	
-	
 	public void switch_sleep_onclick(View view) {
 		// mAudioCapture = new AudioCapture(AudioCapture.TYPE_PCM, 1024);
 		// mAudioCapture.start();
 		if (!appState.sleeping) { // 如果没睡觉，开始记录
-			if (appState.recTag) {// 录音按下
-				// 录音
-				String recfile = "figo.amr";
-				recSound(recfile);
-				
-			}
-
 			appState.sleeping = true;
 			// 开始时间
 			appState.startTime = appState.getCurTime();
+			
+			if (appState.recTag) {// 录音按下    
+				recfile = appState.startTime.toString() + ".amr";
+				// 录音				
+				recSound(recfile);
+				
+			}
 		}else{//状态是睡觉，则停止
 			//
 			recStop();
@@ -200,6 +246,17 @@ public class MainActivity extends FragmentActivity {
 			//结束时间
 			appState.endTime = appState.getCurTime();
 			appState.timeDiff(appState.startTime, appState.endTime);//计算睡了多少小时，分钟
+			
+			int id = 0;
+			appState.queryTable(appState.sleepTableName);
+			if (appState.cursor !=null && appState.cursor.getCount() > 0) {	//适合2.3
+				appState.cursor.moveToLast();
+				id = Integer.parseInt(appState.cursor.getString(appState.cursor.getColumnIndex("id")) ) + 1;
+			}
+			else{
+				id = 0;
+			}
+			appState.addSleeplist(id, appState.startTime, appState.endTime);
 		}
 	}
 	
@@ -211,7 +268,7 @@ public class MainActivity extends FragmentActivity {
 			recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
 			recorder.setOutputFormat(MediaRecorder.OutputFormat.RAW_AMR);
 			recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-			recorder.setOutputFile(appState.extStorage + recfile);
+			recorder.setOutputFile(appState.extStorage + appState.appsdPath + appState.recPath + recfile);
 			recorder.prepare();
 			recorder.start(); // 开始录音
 		} catch (IllegalStateException e) {
