@@ -236,7 +236,7 @@ public class MainActivity extends FragmentActivity {
 			if (appState.recTag) {// 录音按下    
 				recfile = appState.startTime.toString() + ".amr";
 				// 录音				
-				recSound(recfile);
+				recSound(recfile); //用开始时间做文件名
 				
 			}
 		}else{//状态是睡觉，则停止

@@ -1,7 +1,6 @@
 package cn.figo.database;
 
 import java.util.Date;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -15,12 +14,13 @@ public class Database {
 	private int dbversion = 1;
 	private String db_name = "sleep.db";
 	private String table_list = "sleeplist";// 已点菜单数据表名称
-	//private String table_user = "usermanage";// 人员管理数据表名称
+	private String table_info = "info";// info表，存放安装时间
 	private Context mCtx = null;
 	private DatabaseHelper dbHelper;
 	private SQLiteDatabase SQLdb;
 
 	public String username, password, waitername;
+	public Date installDate;
 
 	public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -28,8 +28,7 @@ public class Database {
 				CursorFactory factory, int version) {
 			super(context, name, factory, version);
 			// TODO Auto-generated constructor stub
-			System.out
-					.println("DB databasehelper(context,name,factory,version)");
+			System.out.println("DB databasehelper(context,name,factory,version)");
 		}
 
 		public DatabaseHelper(Context context) {
@@ -43,31 +42,25 @@ public class Database {
 			// TODO Auto-generated method stub
 			System.out.println("DB onCreate");
 			// 只在第一次创建的时候进入
-//			db.execSQL("create table IF NOT EXISTS " + table_user
-//					+ "(username varchar(20) ," + // 用户名
-//					"password varchar(20), " + // 密码
-//					"waitername varchar(20))"); // 员工姓名
-//			SQLdb = db;
-//			System.out.println("DB onCreate --- 2");
+			db.execSQL("create table IF NOT EXISTS " + table_info
+					+ "(installDate long)"); // 
+			SQLdb = db;
+			System.out.println("DB onCreate --- 2");
 
+			//varchar(20)
 			db.execSQL("create table IF NOT EXISTS " + table_list
 					+ 
 					"(id int ," + //序号
-					"startTime varchar(20), " + //
-					"endTime varchar(20) )"); //
+					"startTime long, " + //
+					"endTime long )"); //
 			SQLdb = db;
 			System.out.println("DB onCreate --- 1");
 
-			// 第一次创建的时候添加默认用户admin@3369
-//			try {
-//				username = new String("admin".getBytes(), "utf-8");
-//				password = new String("3369".getBytes(), "utf-8");
-//				waitername = new String("系统管理员".getBytes(), "utf-8");
-//			} catch (UnsupportedEncodingException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}			
-//			addUser(username, password, waitername);
+			// 第一次创建的时候添加安装时间
+			installDate = new Date(System.currentTimeMillis());
+			ContentValues args = new ContentValues();
+			args.put("installDate", installDate.getTime());
+			SQLdb.insert(table_info, null, args);
 		}
 
 		@Override
@@ -121,6 +114,21 @@ public class Database {
 		return SQLdb.delete(table_list, "id = " + id, null);
 	}
 
+	public long getinstallDate(){
+		Cursor cursor = null;
+		try {
+			cursor = SQLdb.query(table_info, // table名
+					new String[] { "installDate" }, // 字段
+					null, // 条件
+					null, null, null, null);
+			cursor.moveToFirst();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.toString());
+		}
+		return cursor.getLong(cursor.getColumnIndex("installDate"));
+	}
+	
 	public Cursor queryTable(String tablename) {
 		Cursor cursor = null;
 		try {

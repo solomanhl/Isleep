@@ -76,4 +76,9 @@ public class GlobalVar extends Application{
 	public long addSleeplist(int id, Date startTime, Date endTime){
 		return database.addSleeplist(id, startTime, endTime);
 	}
+	
+	public Date getinstallDate(){
+		Date dt = new Date(database.getinstallDate());
+		return dt;
+	}
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 
 import cn.figo.isleep.GlobalVar;
@@ -33,7 +34,9 @@ public class FragmentList extends Fragment{
 	private static final int DATA_PICKER_ID = 1;
 	private int year;
     private int month;
+    private int week;
     private int day;
+    private Date dt_start, dt_end;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -51,9 +54,7 @@ public class FragmentList extends Fragment{
 		
 		View view = inflater.inflate(R.layout.fragment_list, container, false);
 		findView(view);
-		updateGridView();
-		
-		searchList(new Date(0,6,26), appState.getCurTime());	//0是1900年
+				
 		
         return view;
 	}
@@ -76,21 +77,42 @@ public class FragmentList extends Fragment{
 		btn_fragmentlist_end = (Button) view.findViewById(R.id.btn_fragmentlist_end);
 		grid_listTop = (GridView) view.findViewById(R.id.grid_listTop);
 		
+		dt_start = appState.getinstallDate();
+		Calendar mycalendar = Calendar.getInstance(Locale.CHINA);
+		mycalendar.setTime(dt_start);// //为Calendar对象设置时间为当前日期
+		year = mycalendar.get(Calendar.YEAR); // 获取Calendar对象中的年
+		month = mycalendar.get(Calendar.MONTH);// 获取Calendar对象中的月
+		day = mycalendar.get(Calendar.DAY_OF_MONTH);// 获取这个月的第几天
+		btn_fragmentlist_start.setText(String.valueOf(year) + "/"
+				+ String.valueOf(month + 1) + "/"
+				+ String.valueOf(day));
+		
+		dt_end = appState.getCurTime();
+		mycalendar.setTime(dt_end);// //为Calendar对象设置时间为当前日期
+		year = mycalendar.get(Calendar.YEAR); // 获取Calendar对象中的年
+		month = mycalendar.get(Calendar.MONTH);// 获取Calendar对象中的月
+		day = mycalendar.get(Calendar.DAY_OF_MONTH);// 获取这个月的第几天
+		btn_fragmentlist_end.setText(String.valueOf(year) + "/"
+				+ String.valueOf(month + 1) + "/"
+				+ String.valueOf(day));
+		
+		searchList(dt_start, dt_end);	//0是1900年
+		
 		btn_fragmentlist_start.setOnClickListener(new Button.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				//初始化Calendar日历对象
-		        Calendar mycalendar=Calendar.getInstance(Locale.CHINA);
-		        Date mydate=new Date(); //获取当前日期Date对象
-		        mycalendar.setTime(mydate);////为Calendar对象设置时间为当前日期
-		        
-		        year=mycalendar.get(Calendar.YEAR); //获取Calendar对象中的年
-		        month=mycalendar.get(Calendar.MONTH);//获取Calendar对象中的月
-		        day=mycalendar.get(Calendar.DAY_OF_MONTH);//获取这个月的第几天
-		        
-		        pressButton = "start";
+				Calendar mycalendar = Calendar.getInstance(Locale.CHINA);
+				Date mydate = new Date(); // 获取当前日期Date对象				
+				mycalendar.setTime(mydate);// //为Calendar对象设置时间为当前日期
+
+				year = mycalendar.get(Calendar.YEAR); // 获取Calendar对象中的年
+				month = mycalendar.get(Calendar.MONTH);// 获取Calendar对象中的月
+				day = mycalendar.get(Calendar.DAY_OF_MONTH);// 获取这个月的第几天
+
+				pressButton = "start";
 				showDialog(DATA_PICKER_ID);
 			}
 		});
@@ -100,15 +122,15 @@ public class FragmentList extends Fragment{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Calendar mycalendar=Calendar.getInstance(Locale.CHINA);
-		        Date mydate=new Date(); //获取当前日期Date对象
-		        mycalendar.setTime(mydate);////为Calendar对象设置时间为当前日期
-		        
-		        year=mycalendar.get(Calendar.YEAR); //获取Calendar对象中的年
-		        month=mycalendar.get(Calendar.MONTH);//获取Calendar对象中的月
-		        day=mycalendar.get(Calendar.DAY_OF_MONTH);//获取这个月的第几天
-		        
-		        pressButton = "end";
+				Calendar mycalendar = Calendar.getInstance(Locale.CHINA);
+				Date mydate = new Date(); // 获取当前日期Date对象
+								mycalendar.setTime(mydate);// //为Calendar对象设置时间为当前日期
+
+				year = mycalendar.get(Calendar.YEAR); // 获取Calendar对象中的年
+				month = mycalendar.get(Calendar.MONTH);// 获取Calendar对象中的月
+				day = mycalendar.get(Calendar.DAY_OF_MONTH);// 获取这个月的第几天
+
+				pressButton = "end";
 				showDialog(DATA_PICKER_ID);
 			}
 		});
@@ -160,13 +182,15 @@ public class FragmentList extends Fragment{
             
             
             //修改year、month、day的变量值，以便以后单击按钮时，DatePickerDialog上显示上一次修改后的值
-            year=myyear;
-            month=monthOfYear;
-            day=dayOfMonth;
+			year = myyear;
+			month = monthOfYear;
+			day = dayOfMonth;
             //更新日期
             updateDate();
             
+            searchList(dt_start, dt_end);
         }
+        
         //当DatePickerDialog关闭时，更新日期显示
         private void updateDate()
         {
@@ -176,26 +200,31 @@ public class FragmentList extends Fragment{
 				btn_fragmentlist_start.setText(String.valueOf(year) + "/"
 								+ String.valueOf(month + 1) + "/"
 								+ String.valueOf(day));
+				Date dt = new Date(year - 1900, month, day);
+				dt_start = dt;
 			}else if (pressButton == "end"){
 				btn_fragmentlist_end.setText(String.valueOf(year) + "/"
 						+ String.valueOf(month + 1) + "/"
 						+ String.valueOf(day));
+				
+				Date dt = new Date(year - 1900, month, day + 1);
+				dt_end = dt;
 			}
         }
     };
 
     
-	private void updateGridView() {
+	private void updateGridView(List<String> dataArray) {
 		// TODO Auto-generated method stub
 		//生成动态数组，并且转入数据  
 	      ArrayList<HashMap<String, Object>> lstImageItem = new ArrayList<HashMap<String, Object>>();  
-	      for(int i=0;i<10;i++)  
-	      {  
-	        HashMap<String, Object> map = new HashMap<String, Object>();  
-	        map.put("ItemImage", R.drawable.icon);//添加图像资源的ID  
-	    map.put("ItemText", "NO."+String.valueOf(i));//按序号做ItemText  
-	        lstImageItem.add(map);  
-	      }  
+		for (int i = 0; i < dataArray.size(); i++) {
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("ItemImage", R.drawable.icon);// 添加图像资源的ID
+			map.put("ItemText", dataArray.get(i));// 按序号做ItemText
+			map.put("filename", dataArray.get(i));	//对应的文件名（不带amr，用开始时间）
+			lstImageItem.add(map);
+		} 
 	      //生成适配器的ImageItem <====> 动态数组的元素，两者一一对应  
 	      SimpleAdapter saImageItems = new SimpleAdapter(getActivity(), //没什么解释  
 	                                                lstImageItem,//数据来源   
@@ -223,9 +252,10 @@ public class FragmentList extends Fragment{
 			// 在本例中arg2=arg3
 			HashMap<String, Object> item = (HashMap<String, Object>) arg0.getItemAtPosition(arg2);
 			// 显示所选Item的ItemText
-			String s = (String) item.get("ItemText");
+			String s = (String) item.get("filename");
+			Date dt = new Date(Long.valueOf(s));
+			s = dt.toString() + ".amr";
 			//播放声音回放
-			s = "figo.amr";
 			playRec(s);
 		}
 
@@ -272,13 +302,18 @@ public class FragmentList extends Fragment{
 		//appState.queryTable(appState.sleepTableName);
 		int id = 0;
 		long starttime, endtime;
+		//List<List<String>> setArray = new ArrayList<List<String>>();
+		List<String> tempArray01 = new ArrayList<String>();
 		appState.cursor.moveToFirst();
 		while(appState.cursor.getCount() > 0 && !appState.cursor.isAfterLast()){
 			id = appState.cursor.getInt(appState.cursor.getColumnIndex("id") );
 			starttime = appState.cursor.getLong(appState.cursor.getColumnIndex("startTime") );
 			endtime = appState.cursor.getLong(appState.cursor.getColumnIndex("endTime") );
+			tempArray01.add(String.valueOf(starttime));
 			
 			appState.cursor.moveToNext();
 		}
+		//dataArray.add(tempArray01);
+		updateGridView(tempArray01);
 	}
 }
