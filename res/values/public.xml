@@ -231,8 +231,8 @@
     <public type="string" name="Help" id="0x7f080036" />
     <public type="string" name="hours" id="0x7f080037" />
     <public type="string" name="hour" id="0x7f080038" />
-    <public type="string" name="add" id="0x7f080039" />
-    <public type="string" name="share" id="0x7f08003a" />
+    <!-- public type="string" name="add" id="0x7f080039" /-->
+    <!-- public type="string" name="share" id="0x7f08003a" /-->
     <public type="string" name="from" id="0x7f08003b" />
     <public type="string" name="to" id="0x7f08003c" />
     <public type="string" name="edit" id="0x7f08003d" />
@@ -413,5 +413,5 @@
     <public type="id" name="lin_share" id="0x7f0b0069" />
     <public type="id" name="tv_sleepList_share" id="0x7f0b006a" />
     <public type="id" name="grid_listTop" id="0x7f0b006b" />
-    <public type="id" name="action_settings" id="0x7f0b006c" />
+    <!--  public type="id" name="action_settings" id="0x7f0b006c" /-->
 </resources>

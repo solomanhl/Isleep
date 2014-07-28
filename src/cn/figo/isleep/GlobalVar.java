@@ -13,6 +13,7 @@ public class GlobalVar extends Application{
 	public String extStorage;
 	public String appsdPath = "figo/";
 	public String recPath = "rec/";
+	public int id = 0;//当前记录的id
 	public Date startTime, endTime;
 	public int curSleepHour, curSleepMin;	//当前、本次睡眠计时 hour min
 	public boolean sleeping, recTag;	//正在睡觉      录音按钮按下
@@ -75,6 +76,10 @@ public class GlobalVar extends Application{
 	
 	public long addSleeplist(int id, Date startTime, Date endTime){
 		return database.addSleeplist(id, startTime, endTime);
+	}
+	
+	public int updateSleeplist(int id, Date endTime){
+		return database.updateSleeplist(id, endTime);
 	}
 	
 	public Date getinstallDate(){

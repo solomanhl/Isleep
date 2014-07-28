@@ -110,6 +110,13 @@ public class Database {
 		return SQLdb.insert(table_list, null, args);
 	}
 	
+	public int updateSleeplist(int id, Date endTime){
+		ContentValues args = new ContentValues();
+		args.put("endTime", endTime.getTime());
+		return SQLdb.update(table_list, args, "id=?", new String[]{String.valueOf(id)}); 
+
+	}
+	
 	public long delFoodlist(int id) {
 		return SQLdb.delete(table_list, "id = " + id, null);
 	}

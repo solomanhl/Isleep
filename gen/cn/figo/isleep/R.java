@@ -1216,20 +1216,20 @@ containing a value of this type.
     }
     public static final class id {
         public static final int action_bar=0x7f0b0089;
-        public static final int action_bar_activity_content=0x7f0b0082;
+        public static final int action_bar_activity_content=0x7f0b0081;
         public static final int action_bar_container=0x7f0b0088;
         public static final int action_bar_overlay_layout=0x7f0b008c;
         public static final int action_bar_root=0x7f0b0087;
         public static final int action_bar_subtitle=0x7f0b0090;
         public static final int action_bar_title=0x7f0b008f;
         public static final int action_context_bar=0x7f0b008a;
-        public static final int action_menu_divider=0x7f0b0083;
-        public static final int action_menu_presenter=0x7f0b0084;
+        public static final int action_menu_divider=0x7f0b0082;
+        public static final int action_menu_presenter=0x7f0b0083;
         public static final int action_mode_close_button=0x7f0b0091;
-        public static final int action_settings=0x7f0b006c;
+        public static final int action_settings=0x7f0b0086;
         public static final int activity_chooser_view_content=0x7f0b0092;
-        public static final int always=0x7f0b0078;
-        public static final int beginning=0x7f0b007e;
+        public static final int always=0x7f0b0077;
+        public static final int beginning=0x7f0b007d;
         public static final int btn_cansel=0x7f0b0004;
         public static final int btn_commit=0x7f0b0003;
         public static final int btn_delete=0x7f0b0005;
@@ -1255,27 +1255,28 @@ containing a value of this type.
         public static final int checkB_list_clock=0x7f0b004c;
         public static final int checkB_record=0x7f0b0049;
         public static final int checkB_sleep=0x7f0b0047;
-        public static final int checkbox=0x7f0b009a;
-        public static final int collapseActionView=0x7f0b007a;
+        public static final int checkbox=0x7f0b009b;
+        public static final int collapseActionView=0x7f0b0079;
         public static final int default_activity_button=0x7f0b0095;
-        public static final int dialog=0x7f0b007b;
-        public static final int disableHome=0x7f0b0075;
-        public static final int dropdown=0x7f0b007c;
-        public static final int edit_query=0x7f0b009d;
+        public static final int dialog=0x7f0b007a;
+        public static final int disableHome=0x7f0b0074;
+        public static final int dropdown=0x7f0b007b;
+        public static final int edit_query=0x7f0b009e;
         public static final int edt_code=0x7f0b000c;
         public static final int edt_sleep_remark=0x7f0b0029;
         public static final int edt_tel1=0x7f0b001e;
         public static final int edt_tel2=0x7f0b0020;
-        public static final int end=0x7f0b0080;
+        public static final int end=0x7f0b007f;
         public static final int expandL_sleep_more=0x7f0b003e;
         public static final int expand_activities_button=0x7f0b0093;
-        public static final int expanded_menu=0x7f0b0099;
+        public static final int expanded_menu=0x7f0b009a;
         public static final int grid_listTop=0x7f0b006b;
-        public static final int home=0x7f0b0081;
-        public static final int homeAsUp=0x7f0b0072;
-        public static final int icon=0x7f0b0097;
-        public static final int ifRoom=0x7f0b0077;
+        public static final int home=0x7f0b0080;
+        public static final int homeAsUp=0x7f0b0071;
+        public static final int icon=0x7f0b0098;
+        public static final int ifRoom=0x7f0b0076;
         public static final int image=0x7f0b0094;
+        public static final int image2=0x7f0b0096;
         public static final int imgV_clockbottom_add=0x7f0b0050;
         public static final int imgV_expand_group=0x7f0b003c;
         public static final int imgV_gridHead=0x7f0b004a;
@@ -1288,24 +1289,24 @@ containing a value of this type.
         public static final int lin_share=0x7f0b0069;
         public static final int lin_sleep_xin=0x7f0b0027;
         public static final int lin_tel=0x7f0b0016;
-        public static final int listMode=0x7f0b006e;
+        public static final int listMode=0x7f0b006d;
         public static final int list_clockSetting=0x7f0b0002;
         public static final int list_clockadd=0x7f0b0000;
-        public static final int list_item=0x7f0b0096;
+        public static final int list_item=0x7f0b0097;
         public static final int list_list=0x7f0b0043;
         public static final int list_popurwindow_clock=0x7f0b0064;
         public static final int list_popurwindow_more=0x7f0b0066;
         public static final int list_tel=0x7f0b005b;
-        public static final int middle=0x7f0b007f;
+        public static final int middle=0x7f0b007e;
         public static final int mySlideButton=0x7f0b0010;
-        public static final int never=0x7f0b0076;
+        public static final int never=0x7f0b0075;
         public static final int noiseCanvas=0x7f0b0033;
         public static final int noiseChoiceCanvas=0x7f0b0011;
         public static final int noiseDurationChoiceCanvas=0x7f0b0013;
-        public static final int none=0x7f0b007d;
-        public static final int normal=0x7f0b006d;
-        public static final int progress_circular=0x7f0b0085;
-        public static final int progress_horizontal=0x7f0b0086;
+        public static final int none=0x7f0b007c;
+        public static final int normal=0x7f0b006c;
+        public static final int progress_circular=0x7f0b0084;
+        public static final int progress_horizontal=0x7f0b0085;
         public static final int radB_noise=0x7f0b0031;
         public static final int radB_trend=0x7f0b0030;
         public static final int radG_canvas=0x7f0b002f;
@@ -1314,29 +1315,29 @@ containing a value of this type.
         public static final int radG_item3=0x7f0b0062;
         public static final int radG_item4=0x7f0b0063;
         public static final int radG_mainTitle=0x7f0b005f;
-        public static final int radio=0x7f0b009c;
-        public static final int search_badge=0x7f0b009f;
-        public static final int search_bar=0x7f0b009e;
-        public static final int search_button=0x7f0b00a0;
-        public static final int search_close_btn=0x7f0b00a5;
-        public static final int search_edit_frame=0x7f0b00a1;
-        public static final int search_go_btn=0x7f0b00a7;
-        public static final int search_mag_icon=0x7f0b00a2;
-        public static final int search_plate=0x7f0b00a3;
-        public static final int search_src_text=0x7f0b00a4;
-        public static final int search_voice_btn=0x7f0b00a8;
-        public static final int shortcut=0x7f0b009b;
-        public static final int showCustom=0x7f0b0074;
-        public static final int showHome=0x7f0b0071;
-        public static final int showTitle=0x7f0b0073;
+        public static final int radio=0x7f0b009d;
+        public static final int search_badge=0x7f0b00a0;
+        public static final int search_bar=0x7f0b009f;
+        public static final int search_button=0x7f0b00a1;
+        public static final int search_close_btn=0x7f0b00a6;
+        public static final int search_edit_frame=0x7f0b00a2;
+        public static final int search_go_btn=0x7f0b00a8;
+        public static final int search_mag_icon=0x7f0b00a3;
+        public static final int search_plate=0x7f0b00a4;
+        public static final int search_src_text=0x7f0b00a5;
+        public static final int search_voice_btn=0x7f0b00a9;
+        public static final int shortcut=0x7f0b009c;
+        public static final int showCustom=0x7f0b0073;
+        public static final int showHome=0x7f0b0070;
+        public static final int showTitle=0x7f0b0072;
         public static final int soundPlayCanvas=0x7f0b002b;
         public static final int split_action_bar=0x7f0b008b;
-        public static final int submit_area=0x7f0b00a6;
+        public static final int submit_area=0x7f0b00a7;
         public static final int switch_breatheNoise=0x7f0b001c;
         public static final int switch_noise=0x7f0b0019;
         public static final int switch_sleep=0x7f0b0046;
-        public static final int tabMode=0x7f0b006f;
-        public static final int title=0x7f0b0098;
+        public static final int tabMode=0x7f0b006e;
+        public static final int title=0x7f0b0099;
         public static final int top_action_bar=0x7f0b008d;
         public static final int trendCanvas=0x7f0b0032;
         public static final int tv_avargeSleepTime=0x7f0b0035;
@@ -1380,10 +1381,10 @@ containing a value of this type.
         public static final int tv_tel=0x7f0b0017;
         public static final int tv_waketime=0x7f0b0058;
         public static final int up=0x7f0b008e;
-        public static final int useLogo=0x7f0b0070;
+        public static final int useLogo=0x7f0b006f;
         public static final int viewPager=0x7f0b000e;
         public static final int view_foreGround=0x7f0b0009;
-        public static final int withText=0x7f0b0079;
+        public static final int withText=0x7f0b0078;
     }
     public static final class integer {
         /**  The maximum number of action buttons that should be permitted within
@@ -1495,47 +1496,47 @@ containing a value of this type.
         public static final int WorkDay=0x7f080046;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
-        public static final int abc_action_bar_home_description=0x7f080067;
+        public static final int abc_action_bar_home_description=0x7f08003a;
         /**  Content description for the action bar "up" affordance. [CHAR LIMIT=NONE] 
          */
-        public static final int abc_action_bar_up_description=0x7f080068;
+        public static final int abc_action_bar_up_description=0x7f080066;
         /**  Content description for the action menu overflow button. [CHAR LIMIT=NONE] 
          */
-        public static final int abc_action_menu_overflow_description=0x7f080069;
+        public static final int abc_action_menu_overflow_description=0x7f080067;
         /**  Label for the "Done" button on the far left of action mode toolbars. 
          */
-        public static final int abc_action_mode_done=0x7f080066;
+        public static final int abc_action_mode_done=0x7f080039;
         /**  Title for a button to expand the list of activities in ActivityChooserView [CHAR LIMIT=25] 
          */
-        public static final int abc_activity_chooser_view_see_all=0x7f080070;
+        public static final int abc_activity_chooser_view_see_all=0x7f08006e;
         /**  ActivityChooserView - accessibility support 
  Description of the shwoing of a popup window with activities to choose from. [CHAR LIMIT=NONE] 
          */
-        public static final int abc_activitychooserview_choose_application=0x7f08006f;
+        public static final int abc_activitychooserview_choose_application=0x7f08006d;
         /**  SearchView accessibility description for clear button [CHAR LIMIT=NONE] 
          */
-        public static final int abc_searchview_description_clear=0x7f08006c;
+        public static final int abc_searchview_description_clear=0x7f08006a;
         /**  SearchView accessibility description for search text field [CHAR LIMIT=NONE] 
          */
-        public static final int abc_searchview_description_query=0x7f08006b;
+        public static final int abc_searchview_description_query=0x7f080069;
         /**  SearchView accessibility description for search button [CHAR LIMIT=NONE] 
          */
-        public static final int abc_searchview_description_search=0x7f08006a;
+        public static final int abc_searchview_description_search=0x7f080068;
         /**  SearchView accessibility description for submit button [CHAR LIMIT=NONE] 
          */
-        public static final int abc_searchview_description_submit=0x7f08006d;
+        public static final int abc_searchview_description_submit=0x7f08006b;
         /**  SearchView accessibility description for voice button [CHAR LIMIT=NONE] 
          */
-        public static final int abc_searchview_description_voice=0x7f08006e;
+        public static final int abc_searchview_description_voice=0x7f08006c;
         /**  Description of the choose target button in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
-        public static final int abc_shareactionprovider_share_with=0x7f080072;
+        public static final int abc_shareactionprovider_share_with=0x7f080070;
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
-        public static final int abc_shareactionprovider_share_with_application=0x7f080071;
+        public static final int abc_shareactionprovider_share_with_application=0x7f08006f;
         public static final int about_noise_analogy=0x7f080026;
         public static final int action_settings=0x7f080001;
-        public static final int add=0x7f080039;
+        public static final int add=0x7f080071;
         public static final int addclock=0x7f080012;
         public static final int alarm_manage=0x7f080008;
         public static final int alert_tel=0x7f08002e;
@@ -1559,6 +1560,9 @@ containing a value of this type.
         public static final int environmental_noise=0x7f080024;
         public static final int everyday_avarge_time=0x7f080022;
         public static final int exitScreen=0x7f08000e;
+        /**  public type="string" name="add" id="0x7f080039" /
+ public type="string" name="share" id="0x7f08003a" /
+         */
         public static final int from=0x7f08003b;
         public static final int hello_world=0x7f080002;
         public static final int hour=0x7f080038;
@@ -1587,7 +1591,7 @@ containing a value of this type.
         public static final int save=0x7f08001b;
         public static final int save_succeed=0x7f08001f;
         public static final int setting=0x7f080040;
-        public static final int share=0x7f08003a;
+        public static final int share=0x7f080072;
         public static final int share_content=0x7f080058;
         public static final int silence=0x7f080043;
         public static final int sleep=0x7f080030;

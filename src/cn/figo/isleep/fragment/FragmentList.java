@@ -60,6 +60,12 @@ public class FragmentList extends Fragment{
 	}
 
 	@Override
+	public void onResume(){
+		super.onResume();
+		searchList(dt_start, dt_end);	//0是1900年
+	}
+	
+	@Override
 	public void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
@@ -96,7 +102,7 @@ public class FragmentList extends Fragment{
 				+ String.valueOf(month + 1) + "/"
 				+ String.valueOf(day));
 		
-		searchList(dt_start, dt_end);	//0是1900年
+		//searchList(dt_start, dt_end);	//0是1900年   放到onResume()里面做
 		
 		btn_fragmentlist_start.setOnClickListener(new Button.OnClickListener() {
 			
@@ -299,7 +305,7 @@ public class FragmentList extends Fragment{
 	
 	public void searchList(Date start, Date end){
 		appState.queryTable(appState.sleepTableName, start, end);
-		//appState.queryTable(appState.sleepTableName);
+		appState.queryTable(appState.sleepTableName);
 		int id = 0;
 		long starttime, endtime;
 		//List<List<String>> setArray = new ArrayList<List<String>>();

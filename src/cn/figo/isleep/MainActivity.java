@@ -3,6 +3,8 @@ package cn.figo.isleep;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
+
 import cn.figo.isleep.fragment.CanvasTrend;
 import cn.figo.isleep.fragment.FragmentHelp;
 import cn.figo.isleep.fragment.FragmentList;
@@ -74,6 +76,7 @@ public class MainActivity extends FragmentActivity {
 
 	}
 
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -181,6 +184,7 @@ public class MainActivity extends FragmentActivity {
 
 		}
 
+		public int currentPageIndex;
 		@Override
 		public void onPageSelected(int arg0) {
 			// TODO Auto-generated method stub
@@ -198,6 +202,12 @@ public class MainActivity extends FragmentActivity {
 				radG_item4.setChecked(true);
 				break;
 			}
+			
+			fragmentArryList.get(currentPageIndex).onPause(); // 调用切换前Fargment的onPause()
+			if (fragmentArryList.get(arg0).isAdded()) {
+				fragmentArryList.get(arg0).onResume(); // 调用切换后Fargment的onResume()
+			}
+			currentPageIndex = arg0;
 		}
 		
 		
@@ -238,6 +248,16 @@ public class MainActivity extends FragmentActivity {
 				// 录音				
 				recSound(recfile); //用开始时间做文件名
 				
+				//点开始的时候就写一条记录 ，避免丢失
+				appState.queryTable(appState.sleepTableName);
+				if (appState.cursor !=null && appState.cursor.getCount() > 0) {	//适合2.3
+					appState.cursor.moveToLast();
+					appState.id = Integer.parseInt(appState.cursor.getString(appState.cursor.getColumnIndex("id")) ) + 1;
+				}
+				else{
+					appState.id = 0;
+				}
+				appState.addSleeplist(appState.id, appState.startTime, new Date(0));
 			}
 		}else{//状态是睡觉，则停止
 			//
@@ -247,16 +267,8 @@ public class MainActivity extends FragmentActivity {
 			appState.endTime = appState.getCurTime();
 			appState.timeDiff(appState.startTime, appState.endTime);//计算睡了多少小时，分钟
 			
-			int id = 0;
-			appState.queryTable(appState.sleepTableName);
-			if (appState.cursor !=null && appState.cursor.getCount() > 0) {	//适合2.3
-				appState.cursor.moveToLast();
-				id = Integer.parseInt(appState.cursor.getString(appState.cursor.getColumnIndex("id")) ) + 1;
-			}
-			else{
-				id = 0;
-			}
-			appState.addSleeplist(id, appState.startTime, appState.endTime);
+			//结束的时候更新这条记录
+			appState.updateSleeplist(appState.id, appState.endTime);
 		}
 	}
 	
