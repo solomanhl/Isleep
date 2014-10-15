@@ -303,7 +303,7 @@ public class FragmentList extends Fragment{
 		}
 	}
 	
-	public void searchList(Date start, Date end){
+	public void searchList(Date start, Date end) {
 		appState.queryTable(appState.sleepTableName, start, end);
 		appState.queryTable(appState.sleepTableName);
 		int id = 0;
